@@ -4,7 +4,7 @@
   "Cancel" : "Отмена",
   "ActionCancelled" : "Отменено",
   "SupportMessage" : "По любым вопросам обращайся @burtimax",
-  "HelpMeMessage" : "Смотри видео, чтобы понять как ставить цели https://www.youtube.com/watch?v=zJII8YJhwrw1",
+  "HelpMeMessage" : "Смотри видео, чтобы понять как ставить цели https://www.youtube.com/watch?v=zJII8YJhwrw",
   "DefaultMessage" : "<b>Команды для работы с ботом</b>:\n/goals - твой список целей\n/new_goal - создать цель\n/delete_goal - удалить цель",
   "AddGoal" : {
     "WriteGoalToBot" : "Напиши цель",

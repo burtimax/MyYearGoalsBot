@@ -27,11 +27,13 @@ IServiceCollection services = builder.Services;
 services.AddLogging();
 services.Configure<ApplicationConfiguration>(builder.Configuration);
 services.Configure<BotConfiguration>(builder.Configuration.GetSection("Bot"));
+services.Configure<QuartzAppOptions>(builder.Configuration.GetSection("Quartz"));
 services.Configure<BotOptions>(builder.Configuration.GetSection("BotOptions"));
 var botConfig = builder.Configuration.GetSection("Bot").Get<BotConfiguration>();
+QuartzAppOptions quartzConfig = builder.Configuration.GetSection("Quartz").Get<QuartzAppOptions>()!;
 BotResources botResources = services.ConfigureBotResources(botConfig.ResourcesFilePath);
 services.AddBot(botConfig);
-
+services.AddQuartzJobs(quartzConfig);
 services.AddDbContext<AppDbContext>(
     options => options.UseNpgsql(botConfig.DbConnection));
 
